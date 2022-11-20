@@ -24,4 +24,18 @@ class ItemsViewController: UITableViewController {
         cell.detailTextLabel?.text = "$\(item.valueInDollars)"
         return cell
     }
+    
+    @IBAction func addNewItem(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func toggleEditingMode(_ sender: UIButton) {
+        if isEditing {
+            sender.setTitle("Edit", for: .normal)
+            setEditing(false, animated: true)
+        } else {
+            sender.setTitle("Done", for: .normal)
+            setEditing(true, animated: true)
+        }
+    }
 }

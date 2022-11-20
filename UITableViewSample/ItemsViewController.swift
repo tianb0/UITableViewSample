@@ -67,6 +67,9 @@ class ItemsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = 65 // for the custom cell
+        // tableView.rowHeight = 65 // for the custom cell
+        // dynamic cell heights
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 65
     }
 }

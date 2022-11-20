@@ -26,6 +26,13 @@ class ItemsViewController: UITableViewController {
     }
     
     @IBAction func addNewItem(_ sender: UIButton) {
+        // update the data layer (model)
+        let item = itemStore.createItem()
+        // update UI
+        if let index = itemStore.allItems.firstIndex(of: item) {
+            let indexPath = IndexPath(row: index, section: 0)
+            tableView.insertRows(at: [indexPath], with: .automatic)
+        }
         
     }
     

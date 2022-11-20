@@ -18,6 +18,7 @@
 		C89F893D292A1077005E583A /* ItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F893C292A1077005E583A /* ItemsViewController.swift */; };
 		C89F893F292A1157005E583A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F893E292A1157005E583A /* Item.swift */; };
 		C89F8941292A9702005E583A /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F8940292A9702005E583A /* ItemStore.swift */; };
+		C89F8943292ACF5D005E583A /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89F8942292ACF5D005E583A /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C89F893C292A1077005E583A /* ItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsViewController.swift; sourceTree = "<group>"; };
 		C89F893E292A1157005E583A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C89F8940292A9702005E583A /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
+		C89F8942292ACF5D005E583A /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C89F890C292A034B005E583A /* AppDelegate.swift */,
 				C89F890E292A034B005E583A /* SceneDelegate.swift */,
 				C89F893C292A1077005E583A /* ItemsViewController.swift */,
+				C89F8942292ACF5D005E583A /* ItemCell.swift */,
 				C89F8912292A034B005E583A /* Main.storyboard */,
 				C89F893E292A1157005E583A /* Item.swift */,
 				C89F8940292A9702005E583A /* ItemStore.swift */,
@@ -266,6 +269,7 @@
 			files = (
 				C89F893F292A1157005E583A /* Item.swift in Sources */,
 				C89F893D292A1077005E583A /* ItemsViewController.swift in Sources */,
+				C89F8943292ACF5D005E583A /* ItemCell.swift in Sources */,
 				C89F890D292A034B005E583A /* AppDelegate.swift in Sources */,
 				C89F8941292A9702005E583A /* ItemStore.swift in Sources */,
 				C89F890F292A034B005E583A /* SceneDelegate.swift in Sources */,

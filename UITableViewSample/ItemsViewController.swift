@@ -17,11 +17,15 @@ class ItemsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // let cell = UITableViewCell(style: .value1, reuseIdentifier: "UITableViewCell")
         // Get a new or recyceld cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        
+        // let cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+        // let item = itemStore.allItems[indexPath.row]
+        // cell.textLabel?.text = item.name
+        // cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         let item = itemStore.allItems[indexPath.row]
-        cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = "$\(item.valueInDollars)"
+        cell.nameLabel.text = item.name
+        cell.serialNumberLabel.text = item.serialNumber
+        cell.valueLabel.text = "$\(item.valueInDollars)"
         return cell
     }
     
@@ -58,5 +62,11 @@ class ItemsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.rowHeight = 65 // for the custom cell
     }
 }

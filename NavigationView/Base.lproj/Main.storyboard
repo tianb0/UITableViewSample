@@ -108,6 +108,9 @@
                                                 </connections>
                                             </textField>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="HdR-V6-QaE" firstAttribute="leading" secondItem="u5i-a4-Xg8" secondAttribute="trailing" constant="8" symbolic="YES" id="L1X-ns-0Tw"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="36i-1k-Wet">
                                         <rect key="frame" x="0.0" y="42" width="398" height="34"/>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zu6-Ab-OWR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zu6-Ab-OWR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="VRi-Mi-tcA" customClass="ItemCell" customModule="NavigationView" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="57.5"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="57.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VRi-Mi-tcA" id="iWH-gv-qQf">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="57.5"/>
@@ -88,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C5q-hd-7u2">
-                                <rect key="frame" x="8" y="96" width="398" height="717"/>
+                                <rect key="frame" x="8" y="100" width="398" height="656"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="W1z-Jw-XDD">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
@@ -151,26 +152,42 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tQ-PY-NEx">
-                                        <rect key="frame" x="0.0" y="126" width="398" height="591"/>
+                                        <rect key="frame" x="0.0" y="126" width="398" height="20.5"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="5HF-Wx-a6d">
+                                        <rect key="frame" x="0.0" y="154.5" width="398" height="501.5"/>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="oNS-Dw-Ho0" firstAttribute="trailing" secondItem="u5i-a4-Xg8" secondAttribute="trailing" id="U9S-l4-AF3"/>
                                     <constraint firstItem="hxV-QY-NRl" firstAttribute="trailing" secondItem="u5i-a4-Xg8" secondAttribute="trailing" id="vOp-gd-7jY"/>
                                 </constraints>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-eN-grZ">
+                                <rect key="frame" x="0.0" y="764" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Item" image="camera" catalog="system" id="vGp-D6-HSJ">
+                                        <connections>
+                                            <action selector="choosePhotoSource:" destination="Xu9-uc-Vey" id="pHd-1m-TlT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ijc-nB-S8N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ijc-nB-S8N" firstAttribute="bottom" secondItem="C5q-hd-7u2" secondAttribute="bottom" id="P9k-4v-X4I"/>
+                            <constraint firstItem="Ell-eN-grZ" firstAttribute="leading" secondItem="YY0-he-1B9" secondAttribute="leading" id="DNN-rR-CiO"/>
+                            <constraint firstAttribute="trailing" secondItem="Ell-eN-grZ" secondAttribute="trailing" id="FET-l5-mW3"/>
+                            <constraint firstItem="Ell-eN-grZ" firstAttribute="bottom" secondItem="ijc-nB-S8N" secondAttribute="bottom" id="Umr-D6-ptZ"/>
                             <constraint firstItem="ijc-nB-S8N" firstAttribute="trailing" secondItem="C5q-hd-7u2" secondAttribute="trailing" constant="8" id="dZ0-8f-QD7"/>
                             <constraint firstItem="C5q-hd-7u2" firstAttribute="leading" secondItem="ijc-nB-S8N" secondAttribute="leading" constant="8" id="e2f-y3-bph"/>
+                            <constraint firstItem="Ell-eN-grZ" firstAttribute="top" secondItem="C5q-hd-7u2" secondAttribute="bottom" constant="8" id="gET-xj-GKW"/>
                             <constraint firstItem="C5q-hd-7u2" firstAttribute="top" secondItem="ijc-nB-S8N" secondAttribute="top" constant="8" id="xU4-Kh-mQ9"/>
                         </constraints>
                         <connections>
@@ -180,6 +197,7 @@
                     <navigationItem key="navigationItem" id="TdX-Xg-IE3"/>
                     <connections>
                         <outlet property="dateLabel" destination="2tQ-PY-NEx" id="m6g-md-R8J"/>
+                        <outlet property="imageView" destination="5HF-Wx-a6d" id="HNL-EU-Evm"/>
                         <outlet property="nameField" destination="HdR-V6-QaE" id="Pjp-1c-49b"/>
                         <outlet property="uidField" destination="hr8-6W-MMB" id="a5h-E7-1pc"/>
                         <outlet property="valueField" destination="yfk-UB-wCT" id="pre-Rz-9Gt"/>
@@ -200,7 +218,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zu6-Ab-OWR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="50x-Zv-a4s">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -214,6 +232,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="93"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

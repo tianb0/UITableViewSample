@@ -11,13 +11,15 @@ class Item: Equatable, Codable {
     var name: String
     var value: Int
     var uid: String
-    var createdAt: Date
+    let createdAt: Date
+    let itemKey: String
     
     init(name: String, value: Int) {
         self.name = name
         self.value = value
-        self.uid = UUID().uuidString
+        self.uid = UUID().uuidString.components(separatedBy: "-").first!
         self.createdAt = Date()
+        self.itemKey = UUID().uuidString
     }
     
     // create an instance with random name and value

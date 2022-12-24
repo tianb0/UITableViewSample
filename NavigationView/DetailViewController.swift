@@ -19,6 +19,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
             navigationItem.title = item.name
         }
     }
+    var imageStore: ImageStore!
     
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -41,6 +42,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         uidField.text = item.uid
         valueField.text = numberFormatter.string(from: NSNumber(value: item.value))
         dateLabel.text = dateFormatter.string(from: item.createdAt)
+        
+        // get the item key
+        let key = item.itemKey
+        let imageToDisplay = imageStore.image(forKey: key)
+        imageView.image = imageToDisplay
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -104,6 +110,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     func imagePicker(for sourceType: UIImagePickerController.SourceType) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = sourceType
+//        imagePicker.allowsEditing = true
         imagePicker.delegate = self
         return imagePicker
     }
@@ -111,8 +118,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         // get picked image from info dictionary
         let image = info[.originalImage] as! UIImage
+        
+        // store the image in the ImageStore for the item's key
+        imageStore.setImage(image, forKey: item.itemKey)
+        
         // put that image on the screen in the image view
         imageView.image = image
+        
         // take image picker off the screen - you must call this dismiss method
         dismiss(animated: true, completion: nil)
     }

@@ -9,6 +9,7 @@ import UIKit
 
 class ItemsViewController: UITableViewController {
     var itemStore: ItemStore!
+    var imageStore: ImageStore!
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -46,6 +47,8 @@ class ItemsViewController: UITableViewController {
         if editingStyle == .delete {
             let item = itemStore.items[indexPath.row]
             itemStore.removeOne(item)
+            // remove the item's image from the image store
+            imageStore.deleteImage(forKey: item.itemKey)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
@@ -60,6 +63,7 @@ class ItemsViewController: UITableViewController {
                 let item = itemStore.items[row]
                 let detailViewController = segue.destination as! DetailViewController
                 detailViewController.item = item
+                detailViewController.imageStore = imageStore
             }
         }
     }

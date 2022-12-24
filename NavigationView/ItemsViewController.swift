@@ -43,6 +43,7 @@ class ItemsViewController: UITableViewController {
         }
     }
     
+    // MARK: Label Test
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let item = itemStore.items[indexPath.row]
@@ -53,6 +54,7 @@ class ItemsViewController: UITableViewController {
         }
     }
     
+    // MARK: - Divider Test
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         itemStore.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
